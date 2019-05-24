@@ -8,5 +8,8 @@ services:
       ACTIVITIES_URL: '192.168.99.101'
       ACTIVITIES_PORT: '4000'
       ACTIVITIES_ENTRY: 'activities-ms/resources/activities'
+      LUGARES_URL: '192.168.99.101'
+      LUGARES_PORT: '3000'
+      LUGARES_ENTRY: 'places'
     ports:
       - '5000:5000'
