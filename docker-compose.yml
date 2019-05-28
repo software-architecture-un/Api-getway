@@ -11,5 +11,8 @@ services:
       LUGARES_URL: '192.168.99.101'
       LUGARES_PORT: '3000'
       LUGARES_ENTRY: 'places'
+      LISTS_URL: '192.168.99.101'
+      LISTS_PORT: '4004'
+      LISTS_ENTRY: 'lists-ms'
     ports:
       - '5000:5000'

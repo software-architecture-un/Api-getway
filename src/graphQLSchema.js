@@ -16,24 +16,33 @@ import {
 	lugaresTypeDef
 } from './lugares/typeDefs';
 
+import {
+	listsMutations,
+	listsQueries,
+	listsTypeDef
+} from './lists/typeDefs';
+
 import activitiesResolvers from './activities/resolvers';
 import lugaresResolvers from './lugares/resolvers';
-
+import listsResolvers from './lists/resolvers';
 // merge the typeDefs
 const mergedTypeDefs = mergeSchemas(
 	[
 		'scalar JSON',
 		'scalar Upload',
 		activitiesTypeDef,
-		lugaresTypeDef
+		lugaresTypeDef,
+		listsTypeDef
 	],
 	[
 		activitiesQueries,
-		lugaresQueries
+		lugaresQueries,
+		listsQueries
 	],
 	[
 		activitiesMutations,
-		lugaresMutations
+		lugaresMutations,
+		listsMutations
 	]
 );
 
@@ -43,6 +52,7 @@ export default makeExecutableSchema({
 	resolvers: merge(
 		{ JSON: GraphQLJSON }, // allows scalar JSON
 		lugaresResolvers,
-		activitiesResolvers
+		activitiesResolvers,
+		listsResolvers
 	)
 });
