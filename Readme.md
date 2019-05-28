@@ -32,4 +32,22 @@ mutation{
     }
   }
 }
-
+query{
+  listWhitPlacesByListId(id: 1){
+    content{
+      id
+      id_user
+      name
+      comment
+      estimatedDate
+      order
+      places{
+        id
+        id_list
+        placeLon
+        placeLat
+      }
+      
+    }
+  }
+}
