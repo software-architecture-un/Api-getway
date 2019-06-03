@@ -1,48 +1,57 @@
 export const usersTypeDef = `
 type User {
-    id: String!
+    id: Int!
     name: String!
+    document: String!
+    age: Int!
+    gender: String!
+    reputation: Float!
     email: String!
-    avatar: String!
-    password: String!
+    password_digest: String
 }
-
-type Userinfo {
-    id: String!
-    name: String!
-    email: String!
-    avatar: String!
+type JWT {
+    jwt: String!
+    message: String!
 }
-
-type Token{
-    token: String!
+type UserResponse {
+    content: User!
+    message: String!
 }
-
+type UsersResponse {
+    content: [User]!
+    message: String!
+}
 input UserInput {
     name: String!
+    document: String!
+    age: Int!
+    gender: String!
     email: String!
-    avatar: String!
     password: String!
+}
+input UserUpdateInput {
+    name: String
+    document: String
+    age: Int
+    gender: String
+    email: String
+    password: String
 }
 
-input DataInput {
+input UserLogin {
     email: String!
     password: String!
-}
-input TokenData{
-    token: String!
-}
-`;
+}`;
 
 export const usersQueries = `
-    allUsers: [User]!
-    userById(id: String!): User!
-    userToken(user: DataInput): Token!
-    userInfo(token: TokenData): Userinfo!
+    allUsers: UsersResponse
+    userById(id: Int!): UserResponse
 `;
 
 export const usersMutations = `
-    createUser(user: UserInput!): User!
-    deleteUser(id: String!): Int
-    updateUser(id: String!, user: UserInput!): User!
+    signIn(user: UserLogin!): JWT
+    createUser(user: UserInput!): UserResponse
+    deleteUser(id: Int!): UserResponse
+    updateUser(id: Int!, user: UserUpdateInput!): UserResponse 
+    updateUser2(id: Int!, user: UserUpdateInput!): UserResponse 
 `;

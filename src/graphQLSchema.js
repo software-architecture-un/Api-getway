@@ -23,9 +23,17 @@ import {
 	usersTypeDef
 } from './users/typeDefs';
 
+import {
+	listsMutations,
+	listsQueries,
+	listsTypeDef
+} from './lists/typeDefs';
+
 import activitiesResolvers from './activities/resolvers';
 import scoreresourcesResolvers from './scoreresources/resolvers';
+import listsResolvers from './lists/resolvers';
 import usersResolvers from './users/resolvers';
+
 
 // merge the typeDefs
 const mergedTypeDefs = mergeSchemas(
@@ -33,17 +41,20 @@ const mergedTypeDefs = mergeSchemas(
 		'scalar JSON',
 		'scalar Upload',
 		activitiesTypeDef,
-		scoreresourcesTypeDef,
+		scoreresourcesTypeDef,,
+		listsTypeDef,
 		usersTypeDef,
 	],
 	[
 		activitiesQueries,
 		scoreresourcesQueries,
+		listsQueries,
 		usersQueries,
 	],
 	[
 		activitiesMutations,
 		scoreresourcesMutations,
+		listsMutations,
 		usersMutations,
 	]
 
