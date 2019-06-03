@@ -1,8 +1,8 @@
 import merge from 'lodash.merge';
 import GraphQLJSON from 'graphql-type-json';
-import { makeExecutableSchema } from 'graphql-tools';
-
+import { makeExecutableSchema} from 'graphql-tools';
 import { mergeSchemas } from './utilities';
+import { GraphQLUpload} from 'apollo-server'
 
 import {
 	activitiesMutations,
@@ -11,39 +11,42 @@ import {
 } from './activities/typeDefs';
 
 import {
-	lugaresMutations,
-	lugaresQueries,
-	lugaresTypeDef
-} from './lugares/typeDefs';
+	scoreresourcesMutations,
+	scoreresourcesQueries,
+	scoreresourcesTypeDef
+} from './scoreresources/typeDefs';
+
 
 import {
-	listsMutations,
-	listsQueries,
-	listsTypeDef
-} from './lists/typeDefs';
+	usersMutations,
+	usersQueries,
+	usersTypeDef
+} from './users/typeDefs';
 
 import activitiesResolvers from './activities/resolvers';
-import lugaresResolvers from './lugares/resolvers';
-import listsResolvers from './lists/resolvers';
+import scoreresourcesResolvers from './scoreresources/resolvers';
+import usersResolvers from './users/resolvers';
+
 // merge the typeDefs
 const mergedTypeDefs = mergeSchemas(
 	[
 		'scalar JSON',
 		'scalar Upload',
 		activitiesTypeDef,
-		lugaresTypeDef,
-		listsTypeDef
+		scoreresourcesTypeDef,
+		usersTypeDef,
 	],
 	[
 		activitiesQueries,
-		lugaresQueries,
-		listsQueries
+		scoreresourcesQueries,
+		usersQueries,
 	],
 	[
 		activitiesMutations,
-		lugaresMutations,
-		listsMutations
+		scoreresourcesMutations,
+		usersMutations,
 	]
+
 );
 
 // Generate the schema object from your types definition.
@@ -51,8 +54,10 @@ export default makeExecutableSchema({
 	typeDefs: mergedTypeDefs,
 	resolvers: merge(
 		{ JSON: GraphQLJSON }, // allows scalar JSON
-		lugaresResolvers,
+		{ Upload: GraphQLUpload} ,
 		activitiesResolvers,
-		listsResolvers
+		scoreresourcesResolvers,
+		usersResolvers,
 	)
+
 });
