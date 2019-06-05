@@ -5,25 +5,20 @@ type List {
     name: String!
     comment: String!
     estimatedDate: String!
-    order: Int!
 }
 input ListInput {
     id_user: Int!
     name: String!
     comment: String!
     estimatedDate: String!
-    order: Int!
 }
 type Place {
-    id: Int!
+    id_place: Int!
     id_list: Int!
-    placeLon: Float!
-    placeLat: Float!
 }
 input PlaceInput {
     id_list: Int!
-    placeLon: Float!
-    placeLat: Float!
+    id_place: Int!
 }
 type ListResponse {
     content: List!
