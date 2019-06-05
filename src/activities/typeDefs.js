@@ -3,17 +3,16 @@ type Activity {
     id: Int!
     name: String!
     description: String!
-    qualification: Int!
-    visits: Int!
-    dead: String!
+    user: Int!
+    place: Int!
 
 }
 input ActivityInput {
   name: String!
   description: String!
-  qualification: Int!
-  visits: Int!
-  dead: String!
+  user: Int!
+  place: Int!
+
 }`;
 
 export const activitiesQueries = `
