@@ -1,19 +1,21 @@
 export const scoreresourcesTypeDef = `
 type Scoreresource {
-    _id: String!
+    _id: Int!
     name: String!
     description: String!
-    adress: String!
-    grade: Int!
-    visit: Int!
+    latitude: Float!
+    longitude: Float!
+    user_id: Int!
 }
 
 input ScoreresourceInput {
-    name: String!
-    description: String!
-    adress: String!
-    grade: Int!
-    visit: Int!
+  
+  name: String!
+  description: String!
+  latitude: Float!
+  longitude: Float!
+  user_id: Int!
+
 } `;
 
 export const scoreresourcesQueries = `
