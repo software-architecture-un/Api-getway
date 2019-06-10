@@ -4,8 +4,6 @@ type User {
     name: String!
     document: String!
     age: Int!
-    gender: String!
-    reputation: Float!
     email: String!
     password_digest: String
 }
@@ -25,7 +23,6 @@ input UserInput {
     name: String!
     document: String!
     age: Int!
-    gender: String!
     email: String!
     password: String!
 }
@@ -33,7 +30,6 @@ input UserUpdateInput {
     name: String
     document: String
     age: Int
-    gender: String
     email: String
     password: String
 }
