@@ -1,0 +1,17 @@
+==========activities=======================
+mutation {
+  createActivity(activity: {
+    name: "actividad 1"
+  	description: "descripcion 1"
+  	user: 1
+  	place: 12
+  }) {
+    name
+  }
+}
+
+query {
+  allActivities {
+    name
+  }
+}
