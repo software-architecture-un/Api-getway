@@ -1,30 +1,38 @@
 export const usersTypeDef = `
 type User {
-    id: Int!
-    name: String!
-    document: String!
-    age: Int!
-    email: String!
+    id: Int
+    name: String
+    document: String
+    age: Int
+    email: String
     password_digest: String
 }
 type JWT {
-    jwt: String!
-    message: String!
+    content: String
+    message: String
+    status: Int
 }
 type UserResponse {
-    content: User!
-    message: String!
+    content: User
+    message: String
+    status: Int
 }
 type UsersResponse {
-    content: [User]!
-    message: String!
+    content: [User]
+    message: String
+    status: Int
+}
+type VerifyJWTResponse {
+    content: Boolean
+    message: String
+    status: Int
 }
 input UserInput {
-    name: String!
-    document: String!
-    age: Int!
-    email: String!
-    password: String!
+    name: String
+    document: String
+    age: Int
+    email: String
+    password: String
 }
 input UserUpdateInput {
     name: String
@@ -33,10 +41,12 @@ input UserUpdateInput {
     email: String
     password: String
 }
-
 input UserLogin {
-    email: String!
-    password: String!
+    email: String
+    password: String
+}
+input JWTInput {
+    jwt: String
 }`;
 
 export const usersQueries = `
@@ -46,6 +56,7 @@ export const usersQueries = `
 
 export const usersMutations = `
     signIn(user: UserLogin!): JWT
+    verifyToken(jwt: JWTInput): VerifyJWTResponse
     createUser(user: UserInput!): UserResponse
     deleteUser(id: Int!): UserResponse
     updateUser(id: Int!, user: UserUpdateInput!): UserResponse 

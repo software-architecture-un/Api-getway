@@ -1,9 +1,10 @@
 import { generalRequest, getRequest } from '../utilities';
-import { url, port, entryPoint, entrySignUp, entryLogin } from './server';
+import { url, port, entryPoint, entrySignUp, entryLogin, verifyJWT } from './server';
 
 const URL = `http://${url}:${port}/${entryPoint}`;
 const URLSIGNUP = `http://${url}:${port}/${entrySignUp}`;
 const URLLOGIN = `http://${url}:${port}/${entryLogin}`;
+const URLVERIFYTOKEN = `http://${url}:${port}/${verifyJWT}`;
 
 const resolvers = {
 	Query: {
@@ -15,6 +16,8 @@ const resolvers = {
 	Mutation: {
 		signIn: (_, { user }) =>
 			generalRequest(`${URLLOGIN}`, 'POST', user),
+		verifyToken: (_, { jwt }) =>
+			generalRequest(`${URLVERIFYTOKEN}`, 'POST'),
 		createUser: (_, { user }) =>
 			generalRequest(`${URLSIGNUP}`, 'POST', user),
 		updateUser: (_, { id, user }) =>
