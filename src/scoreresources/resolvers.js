@@ -9,7 +9,7 @@ const resolvers = {
 			getRequest(`${URL}/`, 'GET'),
 		scoreresourceById: (_, { _id }) =>
 			generalRequest(`${URL}/${_id}/`, 'GET'),
-			
+
 	},
 	Mutation: {
 		createScoreResource: (_, { scoreresource }) =>

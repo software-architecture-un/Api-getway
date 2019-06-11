@@ -1,0 +1,140 @@
+==========activities=======================
+mutation {
+  createActivity(activity: {
+    name: "actividad 1"
+  	description: "descripcion 1"
+  	user: 1
+  	place: 12
+  }) {
+    name
+  }
+}
+
+query {
+  allActivities {
+    name
+  }
+}
+
+=============================================places=====
+
+mutation {
+  createScoreResource(scoreresource: {
+    name: "usuario 1 "
+  	description: "descripcion 1"
+  	latitude: 1
+  	longitude: 1
+  	user_id: 1
+
+  }) {
+    name
+  }
+}
+
+query {
+  allScoreResources {
+    name
+  }
+}
+======================================user======================
+
+query {
+  allUsers {
+    content {
+      name
+      document
+      age
+      email
+      password_digest
+    }
+    message
+  }
+}
+
+query {
+  userById(id: 1) {
+    content {
+      name
+      document
+      age
+      email
+      password_digest
+    }
+    message
+  }
+}
+
+mutation {
+  signIn(user: {
+    email: "dacherreragu@unal.edu.co"
+    password: "123456"
+  }) {
+    jwt
+    message
+  } 
+}
+
+mutation {
+  createUser(user: {
+    name:"Dacherreragu"
+    document:"123456789"
+    age:18
+    email: "prueba@test.prueba"
+    password: "123456"
+  }) {
+    content {
+      name
+      document
+      age
+      email
+      password_digest
+    }
+    message
+  }
+}
+
+mutation {
+  updateUser(id:1, user: {
+    name:"David Celiano Herrera Gutiérrez"
+  }) {
+    content {
+      id
+      name
+      document
+      age
+      email
+      password_digest
+    }
+    message
+  }
+}
+
+mutation {
+  updateUser2(id:1, user: {
+    name:"Celiano Herrera Gutiérrez"
+  }) {
+    content {
+      id
+      name
+      document
+      age
+      email
+      password_digest
+    }
+    message
+  }
+}
+
+mutation {
+  deleteUser(id: 3) {
+    content {
+      id
+      name
+      document
+      age
+      email
+      password_digest
+    }
+    message
+  }
+}
