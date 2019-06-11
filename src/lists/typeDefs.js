@@ -42,7 +42,6 @@ type ListWithPlaces {
     name: String!
     comment: String!
     estimatedDate: String!
-    order: Int!
     places: [Place]!
 }
 type ListWithPlacesResponse {
