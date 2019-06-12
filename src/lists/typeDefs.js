@@ -2,17 +2,18 @@ export const listsTypeDef = `
 type List {
     id: Int!
     id_user: Int!
-    name: String!
-    comment: String!
-    estimatedDate: String!
+    name: String
+    comment: String
+    estimatedDate: String
 }
 input ListInput {
     id_user: Int!
-    name: String!
-    comment: String!
-    estimatedDate: String!
+    name: String
+    comment: String
+    estimatedDate: String
 }
 type Place {
+    id: Int!
     id_place: Int!
     id_list: Int!
 }
@@ -21,20 +22,20 @@ input PlaceInput {
     id_place: Int!
 }
 type ListResponse {
-    content: List!
+    content: List
     message: String!
 }
 type ListsResponse {
-    content: [List]!
-    message: String!
+    content: [List]
+    message: String
 }
 type PlaceResponse {
-    content: Place!
+    content: Place
     message: String!
 }
 type PlacesResponse {
-    content: [Place]!
-    message: String!
+    content: [Place]
+    message: String
 }
 type ListWithPlaces {
     id: Int!
@@ -42,16 +43,17 @@ type ListWithPlaces {
     name: String!
     comment: String!
     estimatedDate: String!
-    places: [Place]!
+    places: [Place]
+    
 }
 type ListWithPlacesResponse {
-    content: ListWithPlaces!
+    content: [ListWithPlaces]
     message: String!
 }`;
 
 export const listsQueries = `
-    listById(id: Int!): ListResponse!
-    placeById(id: Int!): PlaceResponse!
+    listById(id: Int!): ListsResponse!
+    placeById(id: Int!): PlacesResponse!
     listsByUserId(id: Int!): ListsResponse!
     placesByListId(id: Int!): PlacesResponse!
     listWhitPlacesByListId(id: Int!): ListWithPlacesResponse!
