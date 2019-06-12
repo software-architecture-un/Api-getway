@@ -138,3 +138,152 @@ mutation {
     message
   }
 }
+
+===========================
+
+mutation{
+  createList(list:{
+    id_user: 1
+    comment: "xxxxxxxxxxxxxxxx"
+    estimatedDate: "2019-01-01"
+    name: "my lits 2"
+  }  ){
+ message
+    content{
+      id
+      id_user
+      name
+      comment
+      estimatedDate
+    }
+  }
+}
+
+mutation{
+  createPlace(
+    place:{
+    id_list: 1
+      id_place: 5
+    }
+  ){
+    content{
+      id
+      id_place
+      id_list
+    }
+  }
+}
+
+mutation {
+  updateList(
+    id: 1
+    list: {
+      id_user: 1
+      name: "YYYYY"
+      comment: "CCCCCCCCCCCCCCCCC"
+      estimatedDate: "2019-01-01"
+    }
+  ) {
+    content {
+      id
+      id_user
+      name
+      comment
+      estimatedDate
+    }
+  }
+}
+
+
+mutation {
+  updatePlace(id: 1, place: { id_list: 1, id_place: 80 }) {
+    content {
+      id_place
+      id_list
+      id
+    }
+    message
+  }
+}
+
+query {
+  listsByUserId(id: 1) {
+    content {
+      id
+      id_user
+      name
+      comment
+      estimatedDate
+    }
+    message
+  }
+}
+
+
+query {
+  listById(id: 1) {
+    content {
+      id
+      id_user
+      name
+      comment
+      estimatedDate
+    }
+    message
+  }
+}
+
+query {
+  listWhitPlacesByListId(id: 1) {
+    content {
+      id
+      id_user
+      name
+      comment
+      estimatedDate
+      places {
+        id_place
+        id_list
+        id
+      }
+    }
+    message
+  }
+}
+
+
+query {
+  placeById(id: 1) {
+    content {
+      id
+      id_place
+      id_list
+    }
+    message
+  }
+}
+
+query {
+  placesByListId(id: 1) {
+    content {
+      id
+      id_place
+      id_list
+    }
+    message
+  }
+}
+
+
+mutation {
+  deleteList(id: 2) {
+    message
+  }
+}
+
+mutation {
+  deletePlace(id: 1) {
+    message
+  }
+}
+
