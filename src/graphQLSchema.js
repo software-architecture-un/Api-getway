@@ -41,7 +41,7 @@ const mergedTypeDefs = mergeSchemas(
 		'scalar JSON',
 		'scalar Upload',
 		activitiesTypeDef,
-		scoreresourcesTypeDef,,
+		scoreresourcesTypeDef,
 		listsTypeDef,
 		usersTypeDef,
 	],

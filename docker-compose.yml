@@ -19,5 +19,6 @@ services:
       USERS_ENTRY: 'users'
       USERS_SIGNUP_ENTRY: 'signup'
       USERS_LOGIN_ENTRY: 'login'
+      USERS_VERIFY_JWT: 'verify_token'
     ports:
       - '5500:5500'
