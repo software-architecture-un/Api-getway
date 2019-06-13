@@ -17,7 +17,7 @@ const resolvers = {
 		signIn: (_, { user }) =>
 			generalRequest(`${URLLOGIN}`, 'POST', user),
 		verifyToken: (_, { jwt }) =>
-			generalRequest(`${URLVERIFYTOKEN}`, 'POST'),
+			generalRequest(`${URLVERIFYTOKEN}`, 'POST', jwt),
 		createUser: (_, { user }) =>
 			generalRequest(`${URLSIGNUP}`, 'POST', user),
 		updateUser: (_, { id, user }) =>
