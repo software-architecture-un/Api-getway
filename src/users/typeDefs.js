@@ -23,7 +23,7 @@ type UsersResponse {
     status: Int
 }
 type VerifyJWTResponse {
-    content: Boolean
+    content: String
     message: String
     status: Int
 }
