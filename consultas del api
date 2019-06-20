@@ -287,3 +287,96 @@ mutation {
   }
 }
 
+
+
+============================================================
+---------------------------TRAILS---------------------------
+============================================================
+
+------------------------------------------------------------
+OBTENER TODAS LAS RUTAS DE LA BASE DE DATOS
+
+query {
+  allTrails{
+    id
+    usertrail
+    nametrail
+    origintrail
+    destinytrail
+  }
+}
+------------------------------------------------------------
+
+
+------------------------------------------------------------
+OBTENER TODAS LAS RUTAS DE UN USUARIO (id del usuario((INT))
+
+query {
+  findTrailsByUser(id: 222){
+    nametrail
+    origintrail
+    destinytrail
+  }
+}
+------------------------------------------------------------
+
+
+------------------------------------------------------------
+OBTENER UNA RUTA EN ESPECIFICO (id de la ruta (STRING))
+
+query {
+  findTrailById(id: "5d0b7d9b1f93cf0001b824ec") {
+    id
+    usertrail
+    nametrail
+    origintrail
+    destinytrail
+  }
+}
+------------------------------------------------------------
+
+
+------------------------------------------------------------
+CREAR UNA RUTA
+
+mutation {
+  createTrail(trail: {
+    usertrail:555
+    nametrail:"RUTA111"
+    origintrail: 555000
+    destinytrail: 555111
+  }){
+    id
+    usertrail
+    nametrail
+    origintrail
+    destinytrail
+  }
+}
+------------------------------------------------------------
+
+
+------------------------------------------------------------
+BORRAR TODAS LAS RUTAS DE UN USUARIO
+
+mutation {
+  deleteTrails(id: 111){
+    Updated
+    Removed
+    Matched
+    UpsertedId
+  }
+}
+------------------------------------------------------------
+
+
+------------------------------------------------------------
+BORRAR UNA RUTA EN ESPECIFICO
+
+mutation {
+  deleteTrailById(id: "5d0b7e141f93cf0001b824f0"){
+    result
+  }
+}
+------------------------------------------------------------
+============================================================
