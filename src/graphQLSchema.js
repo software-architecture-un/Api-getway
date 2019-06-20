@@ -54,21 +54,21 @@ const mergedTypeDefs = mergeSchemas(
 		scoreresourcesTypeDef,
 		listsTypeDef,
 		usersTypeDef,
-		trailsTypeDef
+		trailsTypeDef,
 	],
 	[
 		activitiesQueries,
 		scoreresourcesQueries,
 		listsQueries,
 		usersQueries,
-		trailsQueries
+		trailsQueries,
 	],
 	[
 		activitiesMutations,
 		scoreresourcesMutations,
 		listsMutations,
 		usersMutations,
-		trailsMutations
+		trailsMutations,
 	]
 
 );

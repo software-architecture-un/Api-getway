@@ -6,26 +6,33 @@ type Trail {
     origintrail: Int!
     destinytrail: Int!
 }
-type TrailInput {
+input TrailInput {
     usertrail: Int!
     nametrail: String!
     origintrail: Int!
     destinytrail: Int!
 }
 
-type TrailsResponse {
-    [Trail]
+type DeleteTrailsOutput {
+        Updated: Int!,
+        Removed: Int!,
+        Matched: Int!,
+        UpsertedId: Int
+}
+
+type DeleteTrailByIdOutput {
+    result: String
 }
 `;
 
 export const trailsQueries = `
-    allTrails():[Trail]
+    allTrails: [Trail]
     findTrailsByUser(id: Int!): [Trail]
-    findTrailById(id: String!): Trail
+    findTrailById(id: String!): Trail!
 `;
 
 export const trailsMutations = `
-    createTrail(trail: TrailInput!): Trail
-    DeleteTrails(id: String!):
-    deleteTrailById(id: Int!):
+    createTrail(trail: TrailInput!): Trail!
+    deleteTrails(id: Int!): DeleteTrailsOutput
+    deleteTrailById(id: String!): DeleteTrailByIdOutput
 `;
