@@ -22,6 +22,6 @@ services:
       USERS_VERIFY_JWT: 'verify_token'
       TRAILS_URL: '192.168.99.101'
       TRAILS_PORT: '3002'
-      TRAILS_ENTRY: 'trails'
+      TRAILS_ENTRY: 'trails-ms'
     ports:
       - '5500:5500'
