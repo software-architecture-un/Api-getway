@@ -1,4 +1,4 @@
-export const listsTypeDef = `
+export const trailsTypeDef = `
 type Trail {
     id: String
     usertrail: Int!
@@ -14,18 +14,18 @@ type TrailInput {
 }
 
 type TrailsResponse {
-    content: [Trail]
+    [Trail]
 }
 `;
 
-export const listsQueries = `
-    allTrails(): TrailsResponse!
-    findTrailsByUser(id: Int!): TrailsResponse!
-    findTrailById(id: String!): Trail!
+export const trailsQueries = `
+    allTrails():[Trail]
+    findTrailsByUser(id: Int!): [Trail]
+    findTrailById(id: String!): Trail
 `;
 
-export const listsMutations = `
-    createTrail(trail: TrailInput!): Trail!
+export const trailsMutations = `
+    createTrail(trail: TrailInput!): Trail
     DeleteTrails(id: String!):
     deleteTrailById(id: Int!):
 `;
