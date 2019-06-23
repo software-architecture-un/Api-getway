@@ -20,11 +20,11 @@ input ScoreresourceInput {
 
 export const scoreresourcesQueries = `
     allScoreResources: [Scoreresource]!
-    scoreresourceById(_id: String!): Scoreresource!
+    scoreresourceById(_id: Int!): Scoreresource!
 `;
 
 export const scoreresourcesMutations = `
     createScoreResource(scoreresource: ScoreresourceInput!): Scoreresource!
-    deleteScoreResource(_id: String!): Int
-    updateScoreResource(_id: String!, scoreresource: ScoreresourceInput!): Scoreresource!
+    deleteScoreResource(_id: Int!): Int
+    updateScoreResource(_id: Int!, scoreresource: ScoreresourceInput!): Scoreresource!
 `;

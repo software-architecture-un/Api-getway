@@ -15,9 +15,9 @@ const resolvers = {
 		createScoreResource: (_, { scoreresource }) =>
 			generalRequest(`${URL}/`, 'POST', scoreresource),
 		deleteScoreResource: (_, { _id, scoreresource }) =>
-			generalRequest(`${URL}/${_id}/`, 'PUT', scoreresource),
+			generalRequest(`${URL}/${_id}/`, 'DELETE', scoreresource),
 		updateScoreResource: (_, { _id }) =>
-			generalRequest(`${URL}/${_id}/`, 'DELETE'),
+			generalRequest(`${URL}/${_id}/`, 'PUT'  ),
 	}
 };
 
