@@ -51,7 +51,7 @@ input TokenInput {
 
 export const usersQueries = `
     allUsers: UsersResponse
-    userById(id: Int!): UserResponse
+    userByEmail(id: Int!): UserResponse
     userById(email: String!): UserResponse
 `;
 
