@@ -21,7 +21,7 @@ input ScoreresourceInput {
 export const scoreresourcesQueries = `
     allScoreResources: [Scoreresource]!
     scoreresourceById(_id: Int!): Scoreresource!
-    scoreresourceByuser(user_id: Int!): Scoreresource!
+    scoreresourceByuser(user_id: Int!): [Scoreresource]!
 `;
 
 export const scoreresourcesMutations = `

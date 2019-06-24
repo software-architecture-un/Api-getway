@@ -2,6 +2,7 @@ import { generalRequest, getRequest } from '../utilities';
 import { url, port, entryPoint } from './server';
 
 const URL = `http://${url}:${port}/${entryPoint}`;
+const URL2= `http://${url}:${port}/scoreserviceUs`;
 
 const resolvers = {
 	Query: {
@@ -10,7 +11,7 @@ const resolvers = {
 		scoreresourceById: (_, { _id }) =>
 			generalRequest(`${URL}/${_id}/`, 'GET'),
 		scoreresourceByuser:(_,{user_id})=> 
-			generalRequest(`${URL}/${user_id}`, 'GET'),
+			generalRequest(`${URL2}/${user_id}`, 'GET'),
 
 	},
 	Mutation: {
