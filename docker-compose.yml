@@ -17,6 +17,7 @@ services:
       USERS_URL: '192.168.99.101'
       USERS_PORT: '3001'
       USERS_ENTRY: 'users'
+      USERS_BY_EMAIL_ENTRY: 'users_by_email'
       USERS_SIGNUP_ENTRY: 'signup'
       USERS_LOGIN_ENTRY: 'login'
       USERS_VERIFY_JWT: 'verify_token'

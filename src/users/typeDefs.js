@@ -52,6 +52,7 @@ input TokenInput {
 export const usersQueries = `
     allUsers: UsersResponse
     userById(id: Int!): UserResponse
+    userById(email: String!): UserResponse
 `;
 
 export const usersMutations = `

@@ -1,10 +1,11 @@
 import { generalRequest, getRequest } from '../utilities';
-import { url, port, entryPoint, entrySignUp, entryLogin, verifyJWT } from './server';
+import { url, port, entryPoint, entrySignUp, entryLogin, verifyJWT, userByEmail } from './server';
 
 const URL = `http://${url}:${port}/${entryPoint}`;
 const URLSIGNUP = `http://${url}:${port}/${entrySignUp}`;
 const URLLOGIN = `http://${url}:${port}/${entryLogin}`;
 const URLVERIFYTOKEN = `http://${url}:${port}/${verifyJWT}`;
+const URLUSERBYEMAIL = `http://${url}:${port}/${userByEmail}`;
 
 const resolvers = {
 	Query: {
@@ -12,6 +13,8 @@ const resolvers = {
 			getRequest(URL, ''),
 		userById: (_, { id }) =>
 			generalRequest(`${URL}/${id}`, 'GET'),
+		userByEmail: (_, { email }) =>
+			generalRequest(`${URLUSERBYEMAIL}`, 'GET', email),
 	},
 	Mutation: {
 		signIn: (_, { user }) =>
