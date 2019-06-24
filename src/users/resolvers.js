@@ -13,8 +13,6 @@ const resolvers = {
 			getRequest(URL, ''),
 		userById: (_, { id }) =>
 			generalRequest(`${URL}/${id}`, 'GET'),
-		userByEmail: (_, { email }) =>
-			generalRequest(`${URLUSERBYEMAIL}`, 'GET', email),
 	},
 	Mutation: {
 		signIn: (_, { user }) =>
@@ -28,7 +26,9 @@ const resolvers = {
 		updateUser2: (_, { id, user }) =>
 			generalRequest(`${URL}/${id}`, 'PUT', user),
 		deleteUser: (_, { id }) =>
-			generalRequest(`${URL}/${id}`, 'DELETE')
+			generalRequest(`${URL}/${id}`, 'DELETE'),
+		userByEmail: (_, { email }) =>
+			generalRequest(`${URLUSERBYEMAIL}`, 'POST', email),
 	}
 };
 
