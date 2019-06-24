@@ -52,7 +52,6 @@ input TokenInput {
 export const usersQueries = `
     allUsers: UsersResponse
     userById(id: Int!): UserResponse
-    userByEmail(email: String!): UserResponse
 `;
 
 export const usersMutations = `
@@ -62,4 +61,5 @@ export const usersMutations = `
     deleteUser(id: Int!): UserResponse
     updateUser(id: Int!, user: UserUpdateInput!): UserResponse 
     updateUser2(id: Int!, user: UserUpdateInput!): UserResponse 
+    userByEmail(email: String!): UserResponse
 `;
