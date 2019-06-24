@@ -44,6 +44,9 @@ input UserUpdateInput {
 input UserLogin {
     email: String
     password: String
+}
+input TokenInput {
+    jwt: String
 }`;
 
 export const usersQueries = `
@@ -53,7 +56,7 @@ export const usersQueries = `
 
 export const usersMutations = `
     signIn(user: UserLogin!): JWT
-    verifyToken(jwt: String!): VerifyJWTResponse
+    verifyToken(jwt: TokenInput!): VerifyJWTResponse
     createUser(user: UserInput!): UserResponse
     deleteUser(id: Int!): UserResponse
     updateUser(id: Int!, user: UserUpdateInput!): UserResponse 
