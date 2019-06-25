@@ -47,6 +47,9 @@ input UserLogin {
 }
 input TokenInput {
     jwt: String
+}
+input EmailInput {
+    email: String
 }`;
 
 export const usersQueries = `
@@ -61,5 +64,5 @@ export const usersMutations = `
     deleteUser(id: Int!): UserResponse
     updateUser(id: Int!, user: UserUpdateInput!): UserResponse 
     updateUser2(id: Int!, user: UserUpdateInput!): UserResponse 
-    userByEmail(email: String!): UserResponse
+    userByEmail(email: EmailInput!): UserResponse
 `;
