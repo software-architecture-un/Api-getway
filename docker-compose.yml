@@ -24,5 +24,9 @@ services:
       TRAILS_URL: '192.168.99.101'
       TRAILS_PORT: '3002'
       TRAILS_ENTRY: 'trails-ms'
+      senderos-proxy:
+  senderos-proxy:
+    container_name: senderos-proxy
+    image: dieosiris23/senderos-proxy
     ports:
-      - '5500:5500'
+      - "80:80"
