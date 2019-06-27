@@ -35,6 +35,12 @@ import {
 	trailsMutations
 } from './trails/typeDefs';
 
+import {
+	interfaceTypeDef,
+	interfaceMutations
+} from './interface/typeDefs';
+
+
 
 
 import activitiesResolvers from './activities/resolvers';
@@ -42,6 +48,7 @@ import scoreresourcesResolvers from './scoreresources/resolvers';
 import listsResolvers from './lists/resolvers';
 import usersResolvers from './users/resolvers';
 import trailsResolvers from './trails/resolvers';
+import interfaceResolvers from './interface/resolvers';
 
 
 
@@ -55,6 +62,7 @@ const mergedTypeDefs = mergeSchemas(
 		listsTypeDef,
 		usersTypeDef,
 		trailsTypeDef,
+		interfaceTypeDef,
 	],
 	[
 		activitiesQueries,
@@ -69,6 +77,7 @@ const mergedTypeDefs = mergeSchemas(
 		listsMutations,
 		usersMutations,
 		trailsMutations,
+		interfaceMutations,
 	]
 
 );
@@ -83,7 +92,8 @@ export default makeExecutableSchema({
 		scoreresourcesResolvers,
 		usersResolvers,
 		listsResolvers,
-		trailsResolvers
+		trailsResolvers,
+		interfaceResolvers
 	)
 
 });

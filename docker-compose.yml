@@ -24,7 +24,10 @@ services:
       TRAILS_URL: '192.168.99.101'
       TRAILS_PORT: '3002'
       TRAILS_ENTRY: 'trails-ms'
-      senderos-proxy:
+      INTERFACE_URL: '192.168.99.101'
+      INTERFACE_PORT: '3005'
+      INTERFACE_ENTRY: 'connect_gropu_c'
+      senderos-proxy: 
   senderos-proxy:
     container_name: senderos-proxy
     image: dieosiris23/senderos-proxy
