@@ -1,31 +1,40 @@
 export const scoreresourcesTypeDef = `
 type Scoreresource {
-    _id: Int!
-    name: String!
-    description: String!
-    latitude: Float!
-    longitude: Float!
-    user_id: Int!
+    _id: Int
+    name: String
+    description: String
+    latitude: Float
+    longitude: Float
+    user_id: Int
 }
 
 input ScoreresourceInput {
-  
-  name: String!
-  description: String!
+  name: String
+  description: String
   latitude: Float!
   longitude: Float!
   user_id: Int!
-
-} `;
+}
+type LugarResponse {
+    content: Scoreresource
+    message: String!
+    status: Int!
+} 
+type LugaresResponse {
+    content: [Scoreresource]
+    message: String!
+    status: Int!
+} 
+`;
 
 export const scoreresourcesQueries = `
-    allScoreResources: [Scoreresource]!
-    scoreresourceById(_id: Int!): Scoreresource!
-    scoreresourceByuser(user_id: Int!): [Scoreresource]!
+    allScoreResources: LugaresResponse!
+    scoreresourceById(_id: Int!): LugarResponse!
+    scoreresourceByuser(user_id: Int!): LugaresResponse!
 `;
 
 export const scoreresourcesMutations = `
-    createScoreResource(scoreresource: ScoreresourceInput!): Scoreresource!
-    deleteScoreResource(_id: Int!): Int
-    updateScoreResource(_id: Int!, scoreresource: ScoreresourceInput!): Scoreresource!
+    createScoreResource(scoreresource: ScoreresourceInput!): LugarResponse!
+    deleteScoreResource(_id: Int!): LugarResponse!
+    updateScoreResource(_id: Int!, scoreresource: ScoreresourceInput!): LugarResponse!
 `;

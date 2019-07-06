@@ -3,7 +3,7 @@ services:
   mafenix-api:
     build: .
     environment:
-      PORT: '5500'
+      # PORT: '5500'
       SHOW_URLS: 'true'
       LISTS_URL: '192.168.99.101'
       LISTS_PORT: '4004'
@@ -27,9 +27,11 @@ services:
       INTERFACE_URL: '192.168.99.101'
       INTERFACE_PORT: '3005'
       INTERFACE_ENTRY: 'connect_gropu_c'
-      senderos-proxy: 
-  senderos-proxy:
-    container_name: senderos-proxy
-    image: dieosiris23/senderos-proxy
-    ports:
-      - "80:80"
+      senderos-proxy:
+    ports: 
+      - '5500:5500'
+  # senderos-proxy:
+  #   container_name: senderos-proxy
+  #   image: dieosiris23/senderos-proxy
+  #   ports:
+  #     - "80:80"
