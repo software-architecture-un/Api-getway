@@ -22,67 +22,111 @@ query {
 =============================================places completo=====
 
 mutation {
-  createScoreResource(scoreresource: {
-    name: "usuario 1 "
-  	description: "descripcion 1"
-  	latitude: 1
-  	longitude: 1
-  	user_id: 1
-
-  }) {
-    name
+  createScoreResource(
+    scoreresource: {
+      name: "usuario 1 "
+      description: "descripcion 1"
+      latitude: 77.777777
+      longitude: 88.88888
+      user_id: 1
+    }
+  ) {
+    content {
+      _id
+      name
+      description
+      latitude
+      longitude
+      user_id
+    }
+    message
+    status
   }
 }
 
 query {
   allScoreResources {
-    name
+    content {
+      _id
+      name
+      description
+      latitude
+      longitude
+      user_id
+    }
+    message
+    status
   }
 }
 
 query {
-  scoreresourceById(_id: 1){
-    name
-    description
-    latitude
-    longitude
-    user_id
+  scoreresourceById(_id:1) {
+    content {
+      _id
+      name
+      description
+      latitude
+      longitude
+      user_id
+    }
+    message
+    status
   }
 }
 
 query {
-  scoreresourceByuser(user_id: 1){
-    _id
-    name
-    description
-    latitude
-    longitude
-    user_id
+  scoreresourceByuser(user_id: 1) {
+    content {
+      _id
+      name
+      description
+      latitude
+      longitude
+      user_id
+    }
+    message
+    status
   }
 }
 
 query {
-  scoreresourceById(user_id: 1){
-    name
-    description
-    latitude
-    longitude
-    user_id
+  scoreresourceById(_id: 0) {
+    content {
+      _id
+      name
+      description
+      latitude
+      longitude
+      user_id
+    }
+    message
+    status
   }
 }
 
 mutation {
-      updateScoreResource(_id:1  scoreresource: {
-        name: "Software Architecture"
-        description: "prueba de que fue"
-        latitude: 13
-        longitude:13
-        user_id: 2
-      }) {
-        name
-    		
-      }
+  updateScoreResource(
+    _id: 1
+    scoreresource: {
+      name: "Software Architecture"
+      description: "prueba de que fue"
+      latitude: 13
+      longitude: 13
+      user_id: 2
     }
+  ) {
+    content {
+      _id
+      name
+      description
+      latitude
+      longitude
+      user_id
+    }
+    message
+    status
+  }
+}
 
 mutation {
   deleteScoreResource(_id: 0)
