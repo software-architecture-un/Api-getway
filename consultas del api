@@ -129,8 +129,21 @@ mutation {
 }
 
 mutation {
-  deleteScoreResource(_id: 0)
+  deleteScoreResource(_id: 1
+  ) {
+    content {
+      _id
+      name
+      description
+      latitude
+      longitude
+      user_id
+    }
+    message
+    status
+  }
 }
+
 ======================================user======================
 
 query {
